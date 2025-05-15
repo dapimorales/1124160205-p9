@@ -5,45 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/output.css">
     <title>Document</title>
+    <style>
+        /* Animasi Hover untuk Produk */
+        .product-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        /* Smooth Transition untuk Dark Mode */
+        html {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
 </head>
-<body >
-    <nav class="bg-gray-800 text-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <div class="text-2xl font-bold">
-                <a href="#">Logo</a>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-4 right-4 z-20">
+        <button id="theme-toggle" class="p-2 bg-orange-500 text-white rounded-full hover:bg-orange-600">
+            <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Shopee_Logo.svg" alt="Logo" class="h-10">
+                <div class="relative">
+                    <input type="text" placeholder="Cari di sini..." class="border rounded-full py-2 px-4 w-64 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <button class="absolute right-2 top-2 text-gray-500 dark:text-gray-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7 7 0 1114 3a7 7 0 012.65 13.65z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <!-- Menu Links -->
-            <div class="hidden md:flex space-x-6">
-                <a href="#" class="hover:text-gray-300">Home</a>
-                <a href="#" class="hover:text-gray-300">About</a>
-                <a href="#" class="hover:text-gray-300">Services</a>
-                <a href="#" class="hover:text-gray-300">Contact</a>
-            </div>
-            <!-- Button -->
-            <div>
-                <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
-                    Sign In
-                </button>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-orange-500">Notifikasi</a>
+                <a href="#" class="hover:text-orange-500">Keranjang</a>
+                <a href="#" class="hover:text-orange-500">Login</a>
             </div>
         </div>
     </nav>
-    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-        <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
-    <h2 class="text-purple-700 text-2xl font-bold text-center mb-6">Login Dulu Mas</h2>
-  <form>
-    <div>
-      <label for="email" class="block text-sm font-medium text-purple-900">Email</label>
-      <input type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md" placeholder="Masukkan Email Anda" required>
+
+    <!-- Banner Slider -->
+    <div class="container mx-auto mt-4">
+        <div class="w-full h-64 bg-gray-300 dark:bg-gray-700 rounded-lg overflow-hidden">
+            <div class="w-full h-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')"></div>
+        </div>
     </div>
-    <div>
-      <label for="password" class="block text-sm font-medium text-purple-900">Password</label>
-      <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" placeholder="Masukkan Passoword Anda" required>
+
+    <!-- Categories -->
+    <div class="container mx-auto mt-6 px-4">
+        <h2 class="text-xl font-semibold mb-4">Kategori Populer</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:bg-orange-50 dark:hover:bg-gray-700 transition-colors">
+                <img src="https://img.icons8.com/ios-filled/50/000000/fashion.png" alt="Fashion" class="mx-auto mb-2">
+                <p class="text-sm">Fashion</p>
+            </div>
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:bg-orange-50 dark:hover:bg-gray-700 transition-colors">
+                <img src="https://img.icons8.com/ios-filled/50/000000/electronic-device.png" alt="Elektronik" class="mx-auto mb-2">
+                <p class="text-sm">Elektronik</p>
+            </div>
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:bg-orange-50 dark:hover:bg-gray-700 transition-colors">
+                <img src="https://img.icons8.com/ios-filled/50/000000/cosmetics.png" alt="Kecantikan" class="mx-auto mb-2">
+                <p class="text-sm">Kecantikan</p>
+            </div>
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:bg-orange-50 dark:hover:bg-gray-700 transition-colors">
+                <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Rumah" class="mx-auto mb-2">
+                <p class="text-sm">Rumah</p>
+            </div>
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:bg-orange-50 dark:hover:bg-gray-700 transition-colors">
+                <img src="https://img.icons8.com/ios-filled/50/000000/sports.png" alt="Olahraga" class="mx-auto mb-2">
+                <p class="text-sm">Olahraga</p>
+            </div>
+        </div>
     </div>
-    <button type="submit" class="bg-purple-700 text-white text-xl mt-6 w-full rounded-md p-2 hover:bg-purple-800 transition duration-150" >Login</button>
-  </form>
-  <p class="mt-4 text-center text-sm text-purple-700">Ga punya akun mas? <a href="https://github.com/DhaniKWP" class="text-blue-400 hover:underline">Daftar sini</a></p>
-  </div>
+
+    <!-- Product Grid -->
+    <div class="container mx-auto mt-6 px-4">
+        <h2 class="text-xl font-semibold mb-4">Rekomendasi untuk Anda</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md product-card">
+                <img src="https://images.unsplash.com/photo-1600585154526-990d71bee1e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Produk Bagus" class="w-full h-40 object-cover mb-2 rounded">
+                <p class="text-sm line-clamp-2">Produk Bagus</p>
+                <p class="text-orange-500 font-semibold">Rp 50.000</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs line-through">Rp 75.000</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md product-card">
+                <img src="https://images.unsplash.com/photo-1600585154265-2a26f612b10b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Produk Murah" class="w-full h-40 object-cover mb-2 rounded">
+                <p class="text-sm line-clamp-2">Produk Murah</p>
+                <p class="text-orange-500 font-semibold">Rp 30.000</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs line-through">Rp 45.000</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md product-card">
+                <img src="https://images.unsplash.com/photo-1600585154140-2a36587b4a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Produk Terbaru" class="w-full h-40 object-cover mb-2 rounded">
+                <p class="text-sm line-clamp-2">Produk Terbaru</p>
+                <p class="text-orange-500 font-semibold">Rp 100.000</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs line-through">Rp 150.000</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md product-card">
+                <img src="https://images.unsplash.com/photo-1600585154136-76a537cf2792?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Produk Diskon" class="w-full h-40 object-cover mb-2 rounded">
+                <p class="text-sm line-clamp-2">Produk Diskon</p>
+                <p class="text-orange-500 font-semibold">Rp 25.000</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs line-through">Rp 40.000</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md product-card">
+                <img src="https://images.unsplash.com/photo-1600585154116-2a3b99c3b524?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Produk Spesial" class="w-full h-40 object-cover mb-2 rounded">
+                <p class="text-sm line-clamp-2">Produk Spesial</p>
+                <p class="text-orange-500 font-semibold">Rp 80.000</p>
+                <p class="text-gray-500 dark:text-gray-400 text-xs line-through">Rp 120.000</p>
+            </div>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tentang Kami</h3>
+                    <p class="text-sm">Kami adalah toko online terpercaya yang menyediakan berbagai produk berkualitas dengan harga terbaik.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-orange-500">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-orange-500">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-orange-500">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="hover:text-orange-500">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="w-6 h-6">
+                        </a>
+                        <a href="#" class="hover:text-orange-500">
+                            <img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter" class="w-6 h-6">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm border-t border-gray-700 pt-4">
+                <p>&copy; 2025 Shopee-like Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('light')) {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9 9 0 0020.354 15.354z"/>`;
+            } else {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>`;
+            }
+        });
+    </script>
 </body>
 </html>
