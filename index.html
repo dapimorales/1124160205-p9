@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>Document</title>
+</head>
+<body >
+    <nav class="bg-gray-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="#">Logo</a>
+            </div>
+            <!-- Menu Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-gray-300">Home</a>
+                <a href="#" class="hover:text-gray-300">About</a>
+                <a href="#" class="hover:text-gray-300">Services</a>
+                <a href="#" class="hover:text-gray-300">Contact</a>
+            </div>
+            <!-- Button -->
+            <div>
+                <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
+                    Sign In
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+    <h2 class="text-purple-700 text-2xl font-bold text-center mb-6">Login Dulu Mas</h2>
+  <form>
+    <div>
+      <label for="email" class="block text-sm font-medium text-purple-900">Email</label>
+      <input type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md" placeholder="Masukkan Email Anda" required>
+    </div>
+    <div>
+      <label for="password" class="block text-sm font-medium text-purple-900">Password</label>
+      <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" placeholder="Masukkan Passoword Anda" required>
+    </div>
+    <button type="submit" class="bg-purple-700 text-white text-xl mt-6 w-full rounded-md p-2 hover:bg-purple-800 transition duration-150" >Login</button>
+  </form>
+  <p class="mt-4 text-center text-sm text-purple-700">Ga punya akun mas? <a href="https://github.com/DhaniKWP" class="text-blue-400 hover:underline">Daftar sini</a></p>
+  </div>
+    </div>
+</body>
+</html>
